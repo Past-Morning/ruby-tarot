@@ -91,11 +91,11 @@ get '/' do
 end
 
 get '/one-card/?' do
-  @card = @deck[(rand(78))] 
+  @card = @deck[(rand(78))]
   erb %{
-    <h1><%= @card[:name] %></h1> 
+    <h1><%= @card[:name] %></h1>
     <img src="<%= @card[:image] %>" />
-    <br><br><b><u><%= @card[:name] %></u></b> 
+    <br><br><b><u><%= @card[:name] %></u></b>
     <br><%= @card[:desc] %>
 	<p><a href="/">home</a></p>
   }
@@ -110,13 +110,13 @@ get '/three-cards/?' do
 	<h1>the Three Card spread</h1>
     <% @spread.each do |card| %>
 	  <div style="display: inline; float:left; padding:11px">
-        <h2><%= card[:name] %></h2> 
+        <h2><%= card[:name] %></h2>
         <img src="<%= card[:image] %>" />
 	  </div>
     <% end %>
     <br><br>
     <% @spread.each do |card| %>
-      <br><br><b><u><%= card[:name] %></u></b> 
+      <br><br><b><u><%= card[:name] %></u></b>
       <br><%= card[:desc] %>
     <% end %>
 	<p style="clear:both"><a href="/">home</a></p>
@@ -126,7 +126,7 @@ end
 get '/all-cards/?' do
   erb %{
     <% @deck.each do |card| %>
-      <h1><%= card[:name] %></h1> 
+      <h1><%= card[:name] %></h1>
       <img src="<%= card[:image] %>" />
       <br><b><u>Upright:</u></b><br><%= card[:desc] %>
       <br><b><u>Reversed:</u></b><br><%= card[:rdesc] %>
@@ -134,4 +134,3 @@ get '/all-cards/?' do
 	<p><a href="/">home</a></p>
   }
 end
-
